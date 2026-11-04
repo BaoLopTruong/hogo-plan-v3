@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link rel="stylesheet" href="site.css">
 <title>HoGo v3 — Plan đến Tuần 11 (v3)</title><style>
 :root{--bg:#f7f7f5;--card:#fff;--ink:#1f2328;--mute:#656d76;--line:#e4e4e0;
 --done:#1a7f37;--done-bg:#dafbe1;--prog:#9a6700;--prog-bg:#fff4c8;--none:#b42318;--none-bg:#ffe4e1;--na:#8c959f;
@@ -142,6 +143,7 @@ window.onStatusChange=function(){
  document.getElementById('w8prog').innerHTML='<div class="kpi"><b>'+n+'</b><span>task W8</span></div>'+['D','P','L','B','N'].map(function(k){
   return '<div class="kpi"><b style="color:'+col[k]+'">'+c[k]+'</b><span>'+L[k]+'</span></div>'}).join('');
  document.getElementById('w8bar').innerHTML=['D','P','L','B','N','O'].map(function(k){return '<i style="width:'+(c[k]*100/n).toFixed(1)+'%;background:'+col[k]+'"></i>'}).join('');
+ if(window.hogoApply)window.hogoApply();
 };
 </script><script>
 (function(){
@@ -158,10 +160,10 @@ function fmt(t){if(!t)return '';var d=new Date(+t);function p(n){return (n<10?'0
  return p(d.getDate())+'/'+p(d.getMonth()+1)+' '+p(d.getHours())+':'+p(d.getMinutes())}
 function grow(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'}
 function paint(r){var s=r.querySelector('select.st');s.className='st '+s.value;r.setAttribute('data-s',s.value);
- var u=r.querySelector('.upd');if(u)u.textContent=r.getAttribute('data-t')?('sửa '+fmt(r.getAttribute('data-t'))):'';}
+ var u=r.querySelector('.upd');if(u)u.textContent=r.getAttribute('data-t')?('sửa '+fmt(r.getAttribute('data-t'))):'';if(window.hogoApply)window.hogoApply();}
 function stamp(){var el=document.getElementById('stamp');if(!el)return;
  var saved=document.body.getAttribute('data-saved');
- el.innerHTML=(unsaved?'<span class="dirty">Có thay đổi chưa xuất file</span> · đã tự lưu trong trình duyệt · ':'')+(saved?'File lưu lần cuối: '+fmt(saved):'');}
+ el.innerHTML=(unsaved?'<span class="dirty">Có thay đổi chưa xuất file</span> · đã tự lưu trong trình duyệt · ':'')+(saved?'File lưu lần cuối: '+fmt(saved):'');if(window.hogoApply)window.hogoApply();}
 rows.forEach(function(r){
  var id=r.getAttribute('data-id'),s=r.querySelector('select.st'),n=r.querySelector('textarea.nt');
  var bt=+(r.getAttribute('data-t')||0),st=store[id];
@@ -206,9 +208,11 @@ document.getElementById('btn-csv').onclick=function(){
  dl(FILE+'_'+today()+'.csv',new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8'}));
 };
 document.getElementById('btn-reset').onclick=function(){
- if(!confirm('Bỏ các thay đổi chưa xuất file và quay về dữ liệu trong file này?'))return;
+ if(!confirm(window.hogoT('Bỏ các thay đổi chưa xuất file và quay về dữ liệu trong file này?')))return;
  try{localStorage.removeItem(KEY)}catch(e){}location.reload();
 };
 stamp();if(window.onStatusChange)window.onStatusChange();
 })();
-</script></body></html>
+</script><script src="i18n-en.js"></script>
+<script src="site.js"></script>
+</body></html>
