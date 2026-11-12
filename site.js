@@ -58,7 +58,7 @@
     while ((node = walker.nextNode())) {
       if (skip(node)) continue;
       var cur = node.nodeValue;
-      var dynamic = pClosest(node, ".upd, #stamp, #w8prog");
+      var dynamic = pClosest(node, ".upd, #stamp, #w8prog, #w9prog");
       if (!originals.has(node)) originals.set(node, cur);
       var src = originals.get(node);
       if (dynamic && !sameSource(src, cur)) {

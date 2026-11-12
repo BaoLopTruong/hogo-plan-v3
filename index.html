@@ -48,18 +48,20 @@ footer{margin-top:40px;color:var(--mute);font-size:12px}
 <body>
 <div class="wrap">
 <h1>HoGo v3 — Tổng quan kế hoạch</h1>
-<p class="sub">Cập nhật 04/11/2026 (v3, theo daily report 02–04/11). Mục tiêu: Thứ 6 27/11/2026 code freeze (M4). Tuần 12 (30/11–04/12) dành cho UAT và go-live. Phân công và giờ đã lên lịch giữ nguyên so với v2.</p>
+<p class="sub">Cập nhật 12/11/2026 (theo daily report 09–12/11 và Feedback report). Mục tiêu: Thứ 6 27/11/2026 code freeze (M4). Tuần 12 (30/11–04/12) dành cho UAT và go-live. Phân công và giờ đã lên lịch giữ nguyên so với v2.</p>
 
 <div class="kpis">
 <div class="kpi"><b>720h</b><span>khối lượng còn lại đã lên lịch (≈ 90 MD)</span></div>
 <div class="kpi"><b>87%</b><span>tải trung bình 4 tuần · W11 để trống ~15%</span></div>
 <div class="kpi"><b>83</b><span>task dev · BE 314h · FE 318h · QA 64h</span></div>
-<div class="kpi"><b style="color:var(--done)">11</b><span>feature hoàn thành / 44 hạng mục</span></div>
-<div class="kpi"><b style="color:var(--prog)">17</b><span>đang làm</span></div>
-<div class="kpi"><b style="color:var(--none)">13</b><span>chưa làm · 3 bỏ hoặc chờ KH</span></div>
+<div class="kpi"><b style="color:var(--done)">19</b><span>feature hoàn thành / 45 hạng mục</span></div>
+<div class="kpi"><b style="color:var(--prog)">15</b><span>đang làm</span></div>
+<div class="kpi"><b style="color:var(--none)">8</b><span>chưa làm · 3 bỏ hoặc chờ KH</span></div>
+<div class="kpi"><b style="color:var(--done)">24 / 25</b><span>feedback khách hàng đã Done</span></div>
 </div>
-<div class="bar"><i style="width:25%;background:var(--done)"></i><i style="width:38.6%;background:#d4a72c"></i><i style="width:29.5%;background:#e5534b"></i><i style="width:6.8%;background:#c9ced4"></i></div>
+<div class="bar"><i style="width:42.2%;background:var(--done)"></i><i style="width:33.3%;background:#d4a72c"></i><i style="width:17.8%;background:#e5534b"></i><i style="width:6.7%;background:#c9ced4"></i></div>
 <p class="small">Xanh: hoàn thành · vàng: đang làm · đỏ: chưa làm · xám: bỏ / chờ khách hàng. Điểm % đếm số hạng mục, không phải khối lượng.</p>
+<div class="note"><b>W9 đến 12/11:</b> Xong address book /v1/contacts + CSV, Document dashboard (API + tab), Cloud upload Drive / Box / Dropbox, Billing API + trang Billing, Inbox / admin messages API, job thông báo, tiếng Nhật, test trang người nhận. Đang làm: Points (job tháng đang test), messages drawer (chưa nối API). Trễ: W9-23 Admin UI chưa bắt đầu, Gmail import (W9-02) mới research. FE xử lý thêm khoảng 20 feedback khách hàng ngoài plan.</div>
 <div class="note"><b>W8 đến 04/11:</b> Thái Bảo xong audit log và SecureDocs webhook; Khang xong History API; Lực xong UI 3/5 màn trang người nhận. Public link API (Huy) vẫn ở bước phân tích, Download API (Hào) trễ khoảng 1 ngày. Phát sinh bug licence không lưu DB (W8-28, Khang).</div>
 
 <h2>Tài liệu</h2>
@@ -67,14 +69,20 @@ footer{margin-top:40px;color:var(--mute);font-size:12px}
 <a class="card" href="HoGo3_Plan_W8-W11_2026.html">
 <span class="tag">Kế hoạch</span>
 <h3>Plan W8 – W11 đến 27/11/2026 · v3</h3>
-<p>Lịch 6 thành viên, 3 cặp FE–BE, tiến độ W8 đến 04/11, cột Status / Note và task mới W8-28.</p>
+<p>Lịch 6 thành viên, 3 cặp FE–BE, tiến độ W8 và W9 đến 12/11, cột Status / Note, rủi ro mới.</p>
 <span class="go">Mở kế hoạch →</span>
 </a>
 <a class="card" href="HoGo3_Module_Status.html">
 <span class="tag">Hiện trạng</span>
 <h3>Tình trạng module / feature</h3>
-<p>44 hạng mục cập nhật theo daily report 02–04/11: 11 hoàn thành, 17 đang làm, 13 chưa làm.</p>
+<p>45 hạng mục cập nhật theo daily report 09–12/11: 19 hoàn thành, 15 đang làm, 8 chưa làm.</p>
 <span class="go">Mở tình trạng module →</span>
+</a>
+<a class="card" href="HoGo_Customer_Feedback_Report.html">
+<span class="tag">Feedback</span>
+<h3>Customer feedback report</h3>
+<p>25 feedback khách hàng (28/10 + 08–10/11): 24 Done, còn P-02 form thẻ kiểu Stripe.</p>
+<span class="go">Mở feedback report →</span>
 </a>
 </div>
 
@@ -83,8 +91,8 @@ footer{margin-top:40px;color:var(--mute);font-size:12px}
 <thead><tr><th>Ngày</th><th>Mốc</th><th>Trạng thái</th><th>Điều kiện đạt</th></tr></thead>
 <tbody>
 <tr><td>T3 03/11</td><td>Gỡ blocker Sprint 3</td><td><span class="pill D">Hoàn thành</span></td><td>W8-01, W8-05, W8-14 xong 02/11. Cần xác nhận code W8-05 và PR integration/sprint-3 đã merge dev.</td></tr>
-<tr><td>T6 06/11</td><td>Sprint 3 đóng + Share link BE</td><td><span class="pill L">Trễ / rủi ro</span></td><td>Public link API chưa bắt đầu code; Download / View online trễ khoảng 1 ngày; bug licence ảnh hưởng test 5 loại package.</td></tr>
-<tr><td>T6 13/11</td><td>M3 — User portal đủ feature</td><td><span class="pill O">Chưa bắt đầu</span></td><td>Trang người nhận, dashboard, address book (CSV, Gmail), cloud upload, points, billing, messages</td></tr>
+<tr><td>T6 06/11</td><td>Sprint 3 đóng + Share link BE</td><td><span class="pill L">Trễ / rủi ro</span></td><td>Share link BE coi như xong (suy ra từ report W9, cần xác nhận); chưa xác nhận bug licence, access report và test 5 loại package.</td></tr>
+<tr><td>T6 13/11</td><td>M3 — User portal đủ feature</td><td><span class="pill P">Đang làm</span></td><td>Đã xong trang người nhận, dashboard, address book CSV, cloud upload, billing, messages API. Còn Points (FE + job tháng), nối messages drawer, Gmail import.</td></tr>
 <tr><td>T6 20/11</td><td>Admin xong + regression cycle 1</td><td><span class="pill O">Chưa bắt đầu</span></td><td>Admin actions, refund, admin profile, tiếng Nhật, security hardening; regression cycle 1 đã chạy; hạ tầng production sẵn sàng (PM)</td></tr>
 <tr><td>T6 27/11</td><td>M4 — Code freeze, sẵn sàng UAT</td><td><span class="pill O">Chưa bắt đầu</span></td><td>Bug regression đã fix, load test đạt, smoke test Playwright pass, cut-over rehearsal trên STG (PM)</td></tr>
 </tbody>
@@ -100,20 +108,20 @@ footer{margin-top:40px;color:var(--mute);font-size:12px}
 </tbody>
 </table>
 <div class="note">Bản v2 bỏ migration (chờ khách hàng confirm) và affiliates (khách hàng không dùng). DevOps do PM phụ trách. Huy chuyển sang FE từ tuần 9 vì 2 FE không đủ tải ở W8–W9.</div>
-<div class="note warn">Cần PM chốt: thêm lại người nhận / tài liệu đã gỡ có trừ điểm không; business workflow public link; thứ tự màn nhập e-mail của Create Link. Thái Bảo đã xong việc tuần từ 04/11 và còn khoảng 12h trong T5–T6.</div>
+<div class="note warn">Cần PM chốt: trường bắt buộc của form thẻ kiểu Stripe (P-02); Client ID / Secret / Redirect URI của Box, Dropbox; giữ hay dời Gmail import; dời W9-23 Admin UI sang W10. Còn treo: thêm lại người nhận / tài liệu đã gỡ có trừ điểm không; thứ tự màn nhập e-mail của Create Link.</div>
 
 <h2>Tình trạng module</h2>
 <table>
 <thead><tr><th>Trạng thái</th><th>Số hạng mục</th><th>Ví dụ</th></tr></thead>
 <tbody>
-<tr><td><span class="pill D">Hoàn thành</span></td><td>11</td><td>Auth, account, documents, points, buy points, admin users, share link token, audit log, SecureDocs webhook</td></tr>
-<tr><td><span class="pill P">Đang làm</span></td><td>17</td><td>Send wizard, packages, history, trang người nhận, public link, download / view online, address book, billing</td></tr>
-<tr><td><span class="pill N">Chưa làm</span></td><td>13</td><td>Cloud upload, messages, security, regression, hạ tầng production</td></tr>
+<tr><td><span class="pill D">Hoàn thành</span></td><td>19</td><td>Auth, account, documents, buy points, audit log, share link (token, public link, download / view online, trang người nhận), address book, billing, dashboard, cloud upload, thông báo</td></tr>
+<tr><td><span class="pill P">Đang làm</span></td><td>15</td><td>Send wizard, packages, history, points, messages, admin actions, tiếng Nhật, Gmail import, feedback KH</td></tr>
+<tr><td><span class="pill N">Chưa làm</span></td><td>8</td><td>Access report, job DELETE_FILE, security, performance, regression, hạ tầng production</td></tr>
 <tr><td><span class="pill O">Bỏ / chờ KH</span></td><td>3</td><td>Affiliates (không dùng), migration HoGo 2.1 → 3.0</td></tr>
 </tbody>
 </table>
 
-<footer>Nguồn: HoGo3_Plan_W8-W11_2026.html và HoGo3_Module_Status.html · daily report 02/11–04/11, bản đối chiếu source code 01/11. Cập nhật 04/11/2026.</footer>
+<footer>Nguồn: HoGo3_Plan_W8-W11_2026.html và HoGo3_Module_Status.html · HoGo_Customer_Feedback_Report.html · daily report 02/11–04/11 và 09–12/11, bản đối chiếu source code 01/11. Cập nhật 12/11/2026.</footer>
 </div>
 <script src="i18n-en.js"></script>
 <script src="site.js"></script>
