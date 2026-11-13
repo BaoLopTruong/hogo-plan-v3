@@ -12,6 +12,7 @@
   function translateCore(key) {
     if (DICT[key]) return DICT[key];
     if (key.indexOf("sửa ") === 0) return "edited " + key.slice(4);
+    if (key.indexOf("Đã lưu lúc ") === 0) return "Saved at " + key.slice("Đã lưu lúc ".length);
     if (key.indexOf("File lưu lần cuối: ") === 0) return "Last export: " + key.slice("File lưu lần cuối: ".length);
     var days = { T2: "Mon", T3: "Tue", T4: "Wed", T5: "Thu", T6: "Fri" };
     if (/T[2-6]/.test(key) && !/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(key)) {
@@ -76,7 +77,10 @@
       node.nodeValue = en ? lead + hit + trail : src;
     }
     document.querySelectorAll("textarea.nt").forEach(function (el) {
-      if (!areaSrc.has(el)) areaSrc.set(el, el.value);
+      var marked = el.getAttribute("data-vi-note");
+      if (marked != null) {
+        if (!areaSrc.has(el) || areaSrc.get(el) !== marked) areaSrc.set(el, marked);
+      } else if (!areaSrc.has(el)) areaSrc.set(el, el.value);
       var src = areaSrc.get(el);
       var hit = translateCore(src.replace(/\s+/g, " ").trim());
       if (hit == null) return;

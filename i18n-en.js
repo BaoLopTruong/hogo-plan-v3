@@ -585,5 +585,14 @@ window.HOGO_EN = {
  "Đang làm:": "In progress:",
  "Đã xong trang người nhận, dashboard, address book CSV, cloud upload, billing, messages API. Còn Points (FE + job tháng), nối messages drawer, Gmail import.": "Done: recipient pages, dashboard, address book CSV, cloud upload, billing, messages API. Remaining: Points (FE + monthly job), messages drawer integration, Gmail import.",
  "Đóng feedback P-02 (form thẻ kiểu Stripe)": "Close feedback P-02 (Stripe-style card form)",
- "Đề xuất dời sang T2 16/11, gộp với W10-13.": "Propose moving to Mon 16/11, merged with W10-13."
+ "Đề xuất dời sang T2 16/11, gộp với W10-13.": "Propose moving to Mon 16/11, merged with W10-13.",
+ "và": "and",
+ "Thay đổi tự lưu và hiện với mọi người mở cùng link này.": "Changes save automatically and show for anyone who opens this link.",
+ "↺ Tải lại": "↺ Reload",
+ "Tải lại bản đang chia sẻ": "Reload the shared copy",
+ "Tải lại bản đang chia sẻ? Sửa chưa kịp lưu trên máy này sẽ mất.": "Reload the shared copy? Edits on this device that have not been saved yet will be lost.",
+ "Đang lưu…": "Saving…",
+ "Đang đồng bộ…": "Syncing…",
+ "Chưa lưu được, sẽ thử lại": "Could not save, retrying",
+ "· ai mở link này cũng thấy": "· anyone with this link sees it"
 };
